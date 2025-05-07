@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "start": "electron main.js --no-sandbox",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^36.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "name": "whatsapp_linux",
+  "version": "1.0.0",
+  "description": "A simple WhatsApp client for Linux (using Electron)",
+  "homepage": "https://github.com/nelideven/whatsapp_linux",
+  "type": "module",
+  "license": "GPLv3.0",
+  "main": "main.js",
+  "author": {
+    "name": "nelideven",
+    "email": "nnyomandhipa@outlook.com"
+  },
+  "build": {
+    "appId": "com.nelideven.WhatsAppLinux",
+    "productName": "WhatsApp for Linux",
+    "icon": "icon.png",
+    "linux": {
+      "target": [
+        "deb",
+        "AppImage"
+      ],
+      "category": "Utility",
+      "maintainer": "Github Contributors <3"
+    }
+  },
+  "dependencies": {
+    "electron-context-menu": "^4.0.5",
+    "electron-store": "^10.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nelideven/whatsapp_linux"
+  }
+}
