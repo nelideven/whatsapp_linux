@@ -3,7 +3,7 @@ import Store from 'electron-store';
 import contextMenu from 'electron-context-menu';
 
 const store = new Store();
-app.commandLine.appendSwitch("disable-gpu-vsync");
+app.commandLine.appendSwitch('disable-site-isolation-trials');
 
 app.whenReady().then(() => {
     // Setting the user agent to mimic WhatsApp Web on usual browsers
@@ -90,4 +90,8 @@ app.whenReady().then(() => {
             maximized: win.isMaximized()
         });
     });
+});
+
+app.on('browser-window-created', (event, window) => {
+    setInterval(async () => { await window.webContents.session.clearCache(); }, 5 * 60 * 1000); // Cleans cache every 5 minutes
 });
